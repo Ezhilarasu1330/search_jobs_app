@@ -30,11 +30,9 @@ const Popularjobs = () => {
       <View style={styles.cardsContainer}>
         {isLoading ? (<ActivityIndicator size='large' color={COLORS.primary} />)
           : error ? (<Text>Something went wrong</Text>)
-            : (<FlatList data={data}
-              renderItem={({ item }) => (
-                <PopularJobCard item={item} selectedJob={selectedJob} handleCardPress={handleCardPress}
-                />
-              )}
+            : (<FlatList data={data} renderItem={({ item }) => (
+              <PopularJobCard item={item} selectedJob={selectedJob} handleCardPress={handleCardPress} />
+            )}
               keyExtractor={(item) => item.job_id}
               contentContainerStyle={{ columnGap: SIZES.medium }}
               horizontal
